@@ -1,0 +1,38 @@
+<h1>Recipes#show</h1>
+<p>Find me in app/views/recipes/show.html.erb</p>
+
+<h1><%= @recipe.title %></h1>	
+
+<p>
+<%= @recipe.recipe %><br>
+</p>
+
+<br><br>
+<h2>Reviews</h2>
+
+<% if @allReviews.blank? %>
+	<p>No comments yet</p>
+
+	<%= form_for @reviews do |review| %>
+
+		<%= review.text_area :comment, size: "90x5", :placeholder => "Enter text here..." %><br>
+		<!-- Create a condition to remove this when not logged in -->
+		<%= review.hidden_field :user_id, :value => current_user.id %>
+		<%= review.hidden_field :recipe_id, :value => params[:id] %>
+		<%= submit_tag :post %>
+
+	<% end %>
+
+<% else %>
+	<%= @allReviews.comment %><br>
+	<%= form_for @reviews do |review| %>
+
+		<%= review.text_area :comment, size: "90x5", :placeholder => "Enter text here..." %><br>
+		<!-- Create a condition to remove this when not logged in -->
+		<%= review.hidden_field :user_id, :value => current_user.id %>
+		<%= review.hidden_field :recipe_id, :value => params[:id] %>
+		<%= submit_tag :post %>
+
+	<% end %>
+
+<% end %>
