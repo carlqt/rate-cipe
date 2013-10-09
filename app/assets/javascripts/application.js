@@ -13,4 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require tinymce-jquery
 //= require_tree .
+
+$(window).load(function(){
+	$(document).ready(function () {
+
+		$("#addButton").click(function () {
+            $('<div/>',{'id':'TextBoxDiv' + counter}).html(
+              $('<label/>').html( 'Textbox #' + counter + ' : ' ))
+            .append( $('<input type="text">').attr({'id':'textbox' + counter,'name':'textbox' + counter}) )
+            .appendTo( '#TextBoxesGroup' )       
+            counter++;
+		});
+	 
+	});
+});

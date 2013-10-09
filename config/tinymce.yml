@@ -1,0 +1,21 @@
+default:
+  theme_advanced_toolbar_location: top
+  theme_advanced_toolbar_align: left
+  theme_advanced_buttons3_add:
+    - tablecontrols
+    - fullscreen
+  plugins:
+    - table
+    - fullscreen
+
+alternate:
+  toolbar1: insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify
+  toolbar2: bullist numlist outdent indent | link image | backcolor forecolor | fontselect | fontsizeselect
+  plugins:
+    - fullscreen
+    - preview
+    - image
+    - wordcount
+    - textcolor
+  height: 150
+  width: 900

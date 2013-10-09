@@ -24,7 +24,7 @@ gem "devise", "~> 3.0.3"
 gem 'annotate', '2.5.0'
 
 #universal markup editor
-gem "markitup-rails"
+gem 'tinymce-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

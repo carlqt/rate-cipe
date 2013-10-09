@@ -1,14 +1,21 @@
 <h1>Recipes#new</h1>
-<p><%= current_user.id %></p>
+<p><%= current_user.username %></p>
 
 <%= form_for @recipes do |recipe| %>
 
 	<%= recipe.label :title%><br>
 	<%= recipe.text_field :title, :autofocus => true %><br> <br>
-	<%= recipe.text_area(:recipe, :size => "30x15") %>
+
+	<strong><%= recipe.label :ingredients %></strong> <br><br>
+	<%= recipe.text_field :ingredients
+
+	<%= recipe.text_area(:recipe, :size => "30x15", :class => 'markitup', :class => 'tinymce') %>
 	<%= recipe.hidden_field :user_id, :value => current_user.id %>
 	<%#= select(:measure, :unit, measure_params, :prompt => 'select something') %><br><br>
 	
 	<%= submit_tag "Add recipe" %>
 
 <% end %>
+
+
+<%= tinymce :alternate %>

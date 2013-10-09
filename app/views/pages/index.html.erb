@@ -5,9 +5,10 @@
 
 	<%= text_field_tag(:measurement,"", :size => 1) %>
 	<%= select(:measure, :unit, measure_params, :prompt => 'select something') %><br><br>
-	<%= text_area_tag(:body, "", :autofocus => true,:size => "30x15") %><br><br>
+	<%= text_area_tag(:demo, "", :autofocus => true,:size => "30x15", :class => 'tinymce', width: "30") %><br><br>
 	<%= submit_tag "Post" %>
 
 <% end %>
 
 <%= @content  %>
+<%= tinymce :alternate %>
