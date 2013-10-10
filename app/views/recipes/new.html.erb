@@ -7,8 +7,16 @@
 	<%= recipe.text_field :title, :autofocus => true %><br> <br>
 
 	<strong><%= recipe.label :ingredients %></strong> <br><br>
-	<%= recipe.text_field :ingredients
+	
+	<div id="addinput">
+		<div id="inputIngredients">
+				<%= recipe.text_field :ingredients %>
+		</div>
+		<%= link_to "Add more ingredents", '#', :id => 'addNew' %><br><br>
+	</div>
+	 
 
+	<strong><%= recipe.label :instructions %></strong><br><br>
 	<%= recipe.text_area(:recipe, :size => "30x15", :class => 'markitup', :class => 'tinymce') %>
 	<%= recipe.hidden_field :user_id, :value => current_user.id %>
 	<%#= select(:measure, :unit, measure_params, :prompt => 'select something') %><br><br>

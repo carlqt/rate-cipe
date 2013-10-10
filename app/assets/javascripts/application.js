@@ -18,14 +18,22 @@
 
 $(window).load(function(){
 	$(document).ready(function () {
+		var addDiv = $('#inputIngredients');
+		var i = $('#addinput p').size() + 1;
 
-		$("#addButton").click(function () {
-            $('<div/>',{'id':'TextBoxDiv' + counter}).html(
-              $('<label/>').html( 'Textbox #' + counter + ' : ' ))
-            .append( $('<input type="text">').attr({'id':'textbox' + counter,'name':'textbox' + counter}) )
-            .appendTo( '#TextBoxesGroup' )       
-            counter++;
+		$('#addNew').live('click', function() {
+		$('<p><input type="text" id="recipe_ingredients_' + i +'" name="recipe[ingredients]" value=""/><a href="#" id="remNew">Remove</a> </p>').appendTo(addDiv);
+		i++;
+
+		return false;
 		});
-	 
+
+		$('#remNew').live('click', function() {
+			if( i > 2 ) {
+				$(this).parent('p').remove();
+				i--;
+			}
+		return false;
+		});
 	});
 });

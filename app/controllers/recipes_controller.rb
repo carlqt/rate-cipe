@@ -15,12 +15,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    #params[:user_id] = current_user.id
+    #params[:recipe][:title] = "Forced Change"
+    x
     @recipes = Recipe.new(recipe_params)
 
     if @recipes.save
       redirect_to recipes_path
     else
+      flash.now[:error] = "Couldn't be saved"
       render 'new'
     end
   end

@@ -6,4 +6,7 @@ class PagesController < ApplicationController
   def create
   end
 
+  def blank
+  end
+
 end
