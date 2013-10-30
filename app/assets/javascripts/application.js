@@ -35,5 +35,13 @@ $(window).load(function(){
 			}
 		return false;
 		});
+
+	tinyMCE.init({
+	    selector: '.tinymce',
+	    width: 900,
+	    height: 150,
+	    plugins: "spellchecker"
+	  });
+
 	});
 });
